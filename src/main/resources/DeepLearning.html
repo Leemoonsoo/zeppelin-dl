@@ -1,0 +1,35 @@
+<div class="input-group">
+  <span class="input-group-addon">Iteration</span>
+  <input type="text"
+         class="form-control"
+         ng-model="iteration"></input>
+  <span class="input-group-btn">
+    <button class="btn btn-default"
+            type="button"
+            ng-click="run='running'">
+      <span ng-show="run==='idle'">Train</span>
+      <span ng-show="run!=='idle'"><i class="fa fa-spinner fa-spin"> </i></span>
+    </button>
+  </span>
+</div>
+
+<div class="input-group"
+     ng-show="predictBtn">
+  <span class="input-group-addon">Value</span>
+  <input type="text"
+         class="form-control"
+         ng-model="predict"></input>
+  <span class="input-group-btn">
+    <button class="btn btn-default"
+            type="button"
+            ng-click="predictBtn=predictBtn+1">
+      <span>Predict</span>
+    </button>
+  </span>
+
+</div>
+
+<br />
+<div ng-show="predictBtn">
+  Label {{predictedValue}}
+</div>
